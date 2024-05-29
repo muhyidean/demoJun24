@@ -12,9 +12,11 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
     ProductRepo productRepo;
 
+    ProductServiceImpl(ProductRepo productRepo){
+        this.productRepo = productRepo;
+    }
     @Autowired
     ModelMapper modelMapper;
 
@@ -25,6 +27,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductSimpleDto findById(int id) {
-        return modelMapper.map(productRepo.getById(id),ProductSimpleDto.class);
+        return modelMapper.map(productRepo.findById(id),ProductSimpleDto.class);
     }
 }
