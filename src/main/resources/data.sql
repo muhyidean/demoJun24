@@ -1,15 +1,26 @@
--- Insert data into product table
-INSERT INTO product (id, name, price, category, discount, star_count, deleted, created_at) VALUES (1, 'Product A', 19.99, 'Electronics', 10, 4, false, '2023-05-29 14:30:00');
-INSERT INTO product (id, name, price, category, discount, star_count, deleted, created_at) VALUES (2, 'Product B', 5.49, 'Books', 0, 5, false, '2023-05-29 15:00:00');
-INSERT INTO product (id, name, price, category, discount, star_count, deleted, created_at) VALUES (3, 'Product C', 99.95, 'Home Appliances', 20, 3, true, '2023-05-29 16:00:00');
-INSERT INTO product (id, name, price, category, discount, star_count, deleted, created_at) VALUES (4, 'Product D', 45.00, 'Clothing', 15, 4, false, '2023-05-29 17:00:00');
-INSERT INTO product (id, name, price, category, discount, star_count, deleted, created_at) VALUES (5, 'Product E', 12.75, 'Accessories', 5, 5, false, '2023-05-29 18:00:00');
-INSERT INTO product (id, name, price, category, discount, star_count, deleted, created_at) VALUES (6, 'Product F', 250.00, 'Electronics', 25, 3, false, '2023-05-29 19:00:00');
+INSERT INTO users (id, email, firstname, lastname, password)
+VALUES (1, 'uinan@miu.edu', 'umur', 'inan', '$2a$12$IKEQb00u5QpZMx4v5zMweu.3wrq0pS7XLCHO4yHZ.BW/yvWu1feo2'); --123
+INSERT INTO users (id, email, firstname, lastname, password)
+VALUES (2, 'john@miu.edu', 'john', 'doe', '$2a$12$IKEQb00u5QpZMx4v5zMweu.3wrq0pS7XLCHO4yHZ.BW/yvWu1feo2'); --123
+INSERT INTO users (id, email, firstname, lastname, password)
+VALUES (3, 'dean@miu.edu', 'Dean', 'Altarawneh', '$2a$12$IKEQb00u5QpZMx4v5zMweu.3wrq0pS7XLCHO4yHZ.BW/yvWu1feo2'); --123
 
--- Insert data into review table
-INSERT INTO review (id, comment, number_of_stars, product_id) VALUES (1, 'Great product!', 5, 1);
-INSERT INTO review (id, comment, number_of_stars, product_id) VALUES (2, 'Good value for money', 4, 2);
-INSERT INTO review (id, comment, number_of_stars, product_id) VALUES (3, 'Satisfactory performance', 3, 3);
-INSERT INTO review (id, comment, number_of_stars, product_id) VALUES (4, 'Not as expected', 2, 4);
-INSERT INTO review (id, comment, number_of_stars, product_id) VALUES (5, 'Excellent quality!', 5, 5);
-INSERT INTO review (id, comment, number_of_stars, product_id) VALUES (6, 'Would buy again', 4, 6);
+INSERT INTO role (id, role)
+VALUES (1, 'ADMIN');
+INSERT INTO role (id, role)
+VALUES (2, 'CLIENT');
+
+
+INSERT INTO users_roles (user_id, roles_id)
+VALUES (1, 1);
+INSERT INTO users_roles (user_id, roles_id)
+VALUES (2, 1);
+INSERT INTO users_roles (user_id, roles_id)
+VALUES (3, 2);
+
+INSERT INTO product (id, name, price, id_user)
+VALUES (1, 'iPhone', 1200, 1);
+INSERT INTO product (id, name, price, id_user)
+VALUES (2, 'iPad', 900, 1);
+INSERT INTO product (id, name, price, id_user)
+VALUES (3, 'Pen', 5, 1);

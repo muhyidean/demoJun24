@@ -1,42 +1,24 @@
 package edu.miutest.demo.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
-
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Product {
 
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    private String name;
-    private float price;
-    private String category;
-    private int discount;
-    private int starCount; // star_count
-    private boolean deleted;
-    private LocalDateTime createdAt;
-
-    @OneToMany()
-    @JoinColumn(name = "product_id")
-    @JsonManagedReference
-    private List<Review> reviews;
-
-//    public Product(int id, String name, float price, List<Review> reviews) {
-//        this.id = id;
-//        this.name = name;
-//        this.price = price;
-////        this.reviews = reviews;
-//    }
+    @Id
+    int id;
+    String name;
+    double price;
 }

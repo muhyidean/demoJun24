@@ -4,10 +4,8 @@ package edu.miutest.demo.controller;
 import edu.miutest.demo.entity.Product;
 import edu.miutest.demo.entity.dto.response.ProductSimpleDto;
 import edu.miutest.demo.service.ProductService;
-import org.apache.coyote.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
